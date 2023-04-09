@@ -19,10 +19,10 @@ public class ConsumerController {
 	
 	@GetMapping("/message")
 	public String message() {
-		logger.debug("*****Started fetching data from consumer using endpoint /message");
+		logger.info("*****Started fetching data from consumer using endpoint /message");
 		String url = "http://producer-service/producer/message";
 		String respose =  restTemplate.getForObject(url, String.class);
-		logger.debug("*****Finished fetching data from consumer using endpoint /message");
+		logger.info("*****Finished fetching data from consumer using endpoint /message");
 		return respose;
 	}
 	
