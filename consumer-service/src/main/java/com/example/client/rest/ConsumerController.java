@@ -29,7 +29,7 @@ public class ConsumerController {
 	@GetMapping("/message/{id}")
 	public String message(@PathVariable long id) {
 		logger.debug("*****Started data from consumer using endpoint /message/id");
-		String url = "http://producer-service/producer/message"+id;
+		String url = "http://producer-service/producer/message/"+id;
 		String respose = restTemplate.getForObject(url, String.class);
 		logger.debug("*****Finished fetching data from consumer using endpoint /message/id");
 		return respose;
